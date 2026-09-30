@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NRW | Sattlerei & Polstermöbel</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        /* NAVBAR */
+        header {
+            background: #111;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #e60000;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #e60000;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+
+           background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&q=80");
+
+background-size: cover;
+background-position: center;
+
+        .hero-content {
+            max-width: 850px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #e60000;
+        }
+
+        .hero p {
+            font-size: 23px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 32px;
+            background: #e60000;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #b00000;
+            transform: translateY(-2px);
+        }
+
+        .btn-light {
+            background: white;
+            color: #111;
+        }
+
+        .btn-light:hover {
+            background: #ddd;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: #e60000;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        /* SERVICES */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* ABOUT */
+        .about {
+            background: #111;
+            color: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 19px;
+            line-height: 2;
+            color: #ddd;
+        }
+
+        /* CONTACT */
+        .contact-box {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .contact-item {
+            margin: 25px 0;
+            font-size: 18px;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #e60000;
+            margin-bottom: 8px;
+        }
+
+        .contact-item a {
+            color: #222;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer strong {
+            color: #e60000;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+<div class="logo">
+    NRW<span>®</span>
+    <small>Sattlerei & Polstermöbel</small>
+</div>
+        <nav>
+            <a href="#home">Startseite</a>
+            <a href="#services">Leistungen</a>
+            <a href="#about">Über uns</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                NRW <span>Sattlerei</span>
+            </h1>
+
+            <p>
+             Polstern · Beziehen · Restaurieren
+
+<br>
+
+<span style="font-size:16px; color:#ccc;">
+    Handwerk · Qualität · Erfahrung
+</span>
+                <br>
+                Qualität und handwerkliche Arbeit in Duisburg
+            </p>
+
+            <a href="https://wa.me/4917661470496?text=Hallo%20NRW%2C%20ich%20interessiere%20mich%20für%20Ihre%20Leistungen.
+    WhatsApp kontaktieren
+</a>
+
+            <a href="tel:020657926957" class="btn btn-light">
+                Jetzt anrufen
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section id="services">
+
+        <div class="section-title">
+
+            <h2>Unsere <span>Leistungen</span></h2>
+
+            <p>
+                Fachgerechte Arbeiten rund um Polster und Möbel
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80"
+     alt="Polstermöbel"
+     style="width:100%; height:220px; object-fit:cover; border-radius:8px; margin-bottom:20px;">
+
+                <h3>Polstern</h3>
+
+                <p>
+                    Wir erneuern und verbessern Polster
+                    für unterschiedliche Möbel und Sitzflächen.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+<img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"
+     alt="Möbel beziehen"
+     style="width:100%; height:220px; object-fit:cover; border-radius:8px; margin-bottom:20px;">
+                <h3>Beziehen</h3>
+
+                <p>
+                    Neue Bezüge und eine hochwertige Verarbeitung
+                    für ein frisches Erscheinungsbild Ihrer Möbel.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+<img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?auto=format&fit=crop&w=600&q=80"
+     alt="Möbel restaurieren"
+     style="width:100%; height:220px; object-fit:cover; border-radius:8px; margin-bottom:20px;">
+                <h3>Restaurieren</h3>
+
+                <p>
+                    Wir geben älteren Möbelstücken neues Leben
+                    und erhalten ihren individuellen Charakter.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="about-content">
+
+            <div class="section-title">
+
+                <h2>Über <span>NRW</span></h2>
+
+            </div>
+
+            <p>
+                NRW steht für handwerkliche Arbeit,
+                sorgfältige Verarbeitung und einen persönlichen
+                Service rund um Polstermöbel und Sattlerarbeiten.
+                Unser Standort befindet sich in Duisburg.
+                Wir kümmern uns um das Polstern, Beziehen
+                und Restaurieren von Möbelstücken.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+    <div class="section-title">
+
+        <h2>Warum <span>NRW?</span></h2>
+
+        <p>
+            Qualität, Sorgfalt und persönlicher Service
+        </p>
+
+    </div>
+
+    <div class="services">
+
+        <div class="card">
+            <div class="icon">⭐</div>
+            <h3>Handwerkliche Qualität</h3>
+            <p>
+                Sorgfältige handwerkliche Arbeit
+                mit Liebe zum Detail.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">✓</div>
+            <h3>Sorgfältige Verarbeitung</h3>
+            <p>
+                Wir achten auf eine saubere und
+                hochwertige Verarbeitung.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🤝</div>
+            <h3>Persönlicher Service</h3>
+            <p>
+                Persönliche Beratung und direkte
+                Kommunikation mit unseren Kunden.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>Kontakt <span>NRW</span></h2>
+
+            <p>
+                Wir freuen uns auf Ihre Anfrage.
+            </p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <div class="contact-item">
+
+               <strong>📍 Adresse</strong>
+
+Hochemmericher Str. 88
+<br>
+47226 Duisburg
+
+<br><br>
+
+<a
+    href="https://www.google.com/maps/search/?api=1&query=Hochemmericher+Strasse+88+47226+Duisburg"
+    target="_blank"
+    class="btn">
+    📍 Route anzeigen
+</a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <strong>📞 Telefon</strong>
+
+                <a href="tel:020657926957">
+                    02065 7926957
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <strong>📱 Mobil</strong>
+
+<a href="tel:017661470496">
+    0176 61470496
+</a>
+
+<br><br>
+
+<a href="https://wa.me/4917661470496"
+   target="_blank"
+   class="btn">
+    💬 WhatsApp schreiben
+</a>
+
+            </div>
+
+
+            <a href="tel:020657926957" class="btn">
+    📞 Jetzt anrufen
+</a>
+
+<a href="https://wa.me/4917661470496" class="btn btn-light" target="_blank">
+    💬 WhatsApp
+</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 <strong>NRW</strong> · Sattlerei & Polstermöbel
+        </p>
+
+        <p>
+            Duisburg, Deutschland
+        </p>
+
+    </footer>
+
+</body>
+</html>
